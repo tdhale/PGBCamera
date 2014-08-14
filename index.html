@@ -67,7 +67,7 @@
 	function launchYoutube(){
 		window.plugins.webintent.startActivity({
 			action: window.plugins.webintent.ACTION_VIEW,
-			url: 'http://www.youtube.com/'}, 
+			url: 'Uri.parse("http://www.youtube.com/user/akoredenitan")'}, 
 			function() {}, 
 			function() {alert('Failed to open URL via Android Intent')};
 		);
