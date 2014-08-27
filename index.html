@@ -10,21 +10,12 @@
     var destinationType; // sets the format of returned value
 	
     document.addEventListener("deviceready",onDeviceReady,false);
-	document.removeEventListener("backbutton", onBackKeyDown, false);
 
     function onDeviceReady() {
 		alert("Device is ready");
         pictureSource=navigator.camera.PictureSourceType;
         destinationType=navigator.camera.DestinationType;
-		screen.lockOrientation('portrait-primary');
-		screen.lockOrientation('landscape');
     }
-	
-	
-	
-	function nextPage(){
-		window.open('nextPage.html');
-	}
 
     // Called when a photo is successfully retrieved
     //
@@ -81,17 +72,21 @@
 			function() {alert('Failed to open URL via Android Intent')};
 		);
 	}
+	
+	function myPage(){
+		window.open('nextPage.html');
+	}
 
     </script>
   </head>
   <body>
+	<button onclick="myPage();">Next Page</button>
     <button onclick="capturePhoto();">Capture Photo</button> <br>
     <button onclick="capturePhotoEdit();">Capture Editable Photo</button> <br>
     <button onclick="getPhoto(pictureSource.PHOTOLIBRARY);">From Photo Library</button><br>
     <button onclick="getPhoto(pictureSource.SAVEDPHOTOALBUM);">From Photo Album</button><br>
     <button onclick="launchYoutube();">Launch Youtube Appp</button><br>
-	<button onclick="nextPage();">Next Page</button>
     <img style="display:none;width:60px;height:60px;" id="smallImage" src="" />
-    <img style="display:none;" id="largeImage" src="" /><br>
+    <img style="display:none;" id="largeImage" src="" />
   </body>
 </html>
