@@ -3,9 +3,9 @@
 		<script src="phonegap.js"></script>
 		<script type='text/javascript'>
 			
-			document.addEventListener("backbutton",backPressed,false);
+			document.addEventListener("backbutton", onBackKeyDown, false);
 			
-			function backPressed(){
+			function onBackKeyDown(){
 				window.history.back();
 			}
 		</script>
