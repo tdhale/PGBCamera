@@ -10,6 +10,7 @@
     var destinationType; // sets the format of returned value
 	
     document.addEventListener("deviceready",onDeviceReady,false);
+	document.removeEventListener("backbutton",backPressed,false);
 
     function onDeviceReady() {
 		alert("Device is ready");
@@ -18,6 +19,8 @@
 		screen.lockOrientation('portrait-primary');
 		screen.lockOrientation('landscape');
     }
+	
+	
 
     // Called when a photo is successfully retrieved
     //
